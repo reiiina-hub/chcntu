@@ -1,6 +1,6 @@
 const mapData = {
     story: {
-        title: "轉型故事 ✨",
+        title: "女力故事 ✨",
         content: `
             <div class="placeholder-card">
                 <h2>那些年的轉型之路</h2>
