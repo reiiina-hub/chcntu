@@ -112,6 +112,10 @@ function navigateTo(viewId) {
         mapView.classList.remove('hidden');
         contentView.classList.remove('active');
         contentView.classList.add('hidden');
+                
+        if (typeof gtag === 'function') {
+            gtag('event', 'return_to_map');
+        }
     } else {
         const data = mapData[viewId];
         if (data) {
