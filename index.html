@@ -6,7 +6,7 @@
     <title>職涯地圖探索</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
-       
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-363E7F2VPB"></script>
     <script>
@@ -19,6 +19,17 @@
 </head>
 <body>
     <div id="app">
+        <!-- Intro Overlay -->
+        <div id="intro-overlay" class="intro-overlay">
+            <div class="intro-content">
+                <h1 class="intro-title">從穩固的城市基石，到細膩的人本守護。</h1>
+                <p class="intro-subtitle">自 1954 年築起第一道堅韌牆面起，嘉新不斷跨越產業邊界。<br>
+                我們將水泥的嚴謹轉化為旅宿的精緻，將建築的安定延伸至健康照護的專業。</p>
+                <p class="intro-conclusion">在多元事業的拼圖中，我們持續定義 Quality of Life 的真實模樣——<br>為人們築起一個健康且永續發展的未來。</p>
+                <button class="intro-enter-btn" onclick="closeIntro()">進入地圖探索 ▶</button>
+            </div>
+        </div>
+
         <!-- Map View -->
         <div id="map-view" class="view active">
             <div class="map-container">
@@ -28,7 +39,7 @@
                     
                     <div class="building-entity" style="top: 52%; left: 19%; width: 19%;" onclick="navigateTo('culture')">
                         <img src="assets/v2_b1_t.png" alt="企業大樓" class="blended-img" />
-                        <div class="label-tag">🏢 企業文化大樓</div>
+                        <div class="label-tag">🏢 企業故事長廊</div>
                     </div>
                     
                     <div class="building-entity" style="top: 23%; left: 16%; width: 19%;" onclick="navigateTo('quiz')">
@@ -38,17 +49,17 @@
                     
                     <div class="building-entity" style="top: 20%; left: 42%; width: 16%;" onclick="navigateTo('story')">
                         <img src="assets/v2_b3_t.png" alt="展演場所" class="blended-img" />
-                        <div class="label-tag">🎪 女力故事帳篷</div>
+                        <div class="label-tag">🎪 員工多元視角</div>
                     </div>
                     
                     <div class="building-entity" style="top: 21%; left: 68%; width: 18%;" onclick="navigateTo('units')">
                         <img src="assets/v2_b4_t.png" alt="遊樂園" class="blended-img" />
-                        <div class="label-tag">🎡 事業體遊樂園</div>
+                        <div class="label-tag">🎡 嘉新永續方舟</div>
                     </div>
                     
                     <div class="building-entity" style="top: 70%; left: 48%; width: 25%;" onclick="navigateTo('benefits')">
                         <img src="assets/v2_b5_t.png" alt="溫馨住家" class="blended-img" />
-                        <div class="label-tag">🏡 員工福利專區</div>
+                        <div class="label-tag">🏡 社群傳送門 </div>
                     </div>
                 </div>
             </div>
