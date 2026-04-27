@@ -85,19 +85,39 @@ const mapData = {
         `
     },
     benefits: {
-        title: "員工福利 🏡",
+        title: "社群傳送門 🌐",
         content: `
-            <div class="placeholder-card" style="border-top: 5px solid #fd79a8;">
-                <h2 style="color: #e84393;">您的專屬照顧計畫</h2>
-                <ul style="padding-left: 20px; line-height: 2; margin-top: 15px; color: #636e72;">
-                    <li><strong>🏥 升級版健檢：</strong> 員工及眷屬專屬的豪華健康檢查方案。</li>
-                    <li><strong>✈️ 旅遊補助：</strong> 每年提供優渥的員工旅遊津貼，鼓勵您出國走走。</li>
-                    <li><strong>🎁 節慶禮金：</strong> 三節獎金、生日禮金，還有不定期的驚喜小禮物！</li>
-                </ul>
-            </div>
-            <div class="placeholder-card">
-                <h2>幸福專區</h2>
-                <p style="color: #636e72; line-height: 1.6;">這裡會介紹我們各種隱藏版福利，包含育兒津貼、健身房補助，以及免費心理諮商服務，確保您在這裡的每一天都安心快樂！</p>
+            <p style="text-align: center; color: #636e72; font-size: 1.1rem; margin-bottom: 30px;">點擊下方卡片，深入了解嘉新企業團的多元面貌與最新動態。</p>
+            <div class="social-grid">
+                <a href="https://www.facebook.com/p/嘉新企業團-100063882524535/" target="_blank" class="social-card fb">
+                    <img src="assets/icon_fb.png" alt="Facebook" class="social-icon">
+                    <div class="social-title">Facebook</div>
+                    <div class="social-summary">企業官方動態</div>
+                </a>
+                
+                <a href="#" target="_blank" class="social-card threads" onclick="alert('Threads 連結尚未提供，敬請期待！'); return false;">
+                    <img src="assets/icon_threads.png" alt="Threads" class="social-icon">
+                    <div class="social-title">Threads</div>
+                    <div class="social-summary">嘉新日常與快訊</div>
+                </a>
+                
+                <a href="https://www.instagram.com/chcgroup_career.tw" target="_blank" class="social-card ig">
+                    <img src="assets/icon_ig.png" alt="Instagram" class="social-icon">
+                    <div class="social-title">Instagram</div>
+                    <div class="social-summary">職場生活與活動</div>
+                </a>
+                
+                <a href="https://www.chcgroup.com.tw/" target="_blank" class="social-card website">
+                    <img src="assets/icon_chc.png" alt="嘉新官網" class="social-icon">
+                    <div class="social-title">嘉新官網</div>
+                    <div class="social-summary">投資人與企業資訊</div>
+                </a>
+                
+                <a href="https://www.104.com.tw/company/5gonzzc?jobsource=google" target="_blank" class="social-card job104">
+                    <img src="assets/icon_104.png" alt="104人力資源" class="social-icon">
+                    <div class="social-title">104 人力銀行</div>
+                    <div class="social-summary">最新職缺與投遞</div>
+                </a>
             </div>
         `
     }
@@ -112,7 +132,7 @@ function navigateTo(viewId) {
         mapView.classList.remove('hidden');
         contentView.classList.remove('active');
         contentView.classList.add('hidden');
-                
+        
         if (typeof gtag === 'function') {
             gtag('event', 'return_to_map');
         }
@@ -133,13 +153,26 @@ function navigateTo(viewId) {
             mapView.classList.add('hidden');
             contentView.classList.add('active');
             contentView.classList.remove('hidden');
-                        
+            
             if (typeof gtag === 'function') {
                 gtag('event', 'view_feature', {
                     'feature_name': viewId,
                     'feature_title': data.title
                 });
             }
+        }
+    }
+}
+
+// Handle closing the intro overlay
+function closeIntro() {
+    const introOverlay = document.getElementById('intro-overlay');
+    if (introOverlay) {
+        introOverlay.classList.add('hidden');
+        
+        // Optional: Track that the user entered the map from the intro
+        if (typeof gtag === 'function') {
+            gtag('event', 'enter_map_from_intro');
         }
     }
 }
