@@ -133,6 +133,13 @@ function navigateTo(viewId) {
             mapView.classList.add('hidden');
             contentView.classList.add('active');
             contentView.classList.remove('hidden');
+                        
+            if (typeof gtag === 'function') {
+                gtag('event', 'view_feature', {
+                    'feature_name': viewId,
+                    'feature_title': data.title
+                });
+            }
         }
     }
 }
