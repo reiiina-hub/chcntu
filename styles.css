@@ -16,30 +16,46 @@
 body {
     font-family: 'Noto Sans TC', sans-serif;
     color: var(--text-dark);
-    background-color: #eaebf0; /* Slightly darker background to make the white app pop out */
-    overflow-y: auto; /* Standard vertical scrolling */
-    overflow-x: auto; /* Fallback for very small screens */
+    background-color: #eaebf0;
+    /* Slightly darker background to make the white app pop out */
+    overflow-y: auto;
+    /* Standard vertical scrolling */
+    overflow-x: auto;
+    /* Fallback for very small screens */
 }
 
 #app {
     width: 100%;
-    max-width: 1200px; /* Fixed maximum width constraint */
-    min-width: 1000px; /* Prevent it from shrinking too much and breaking the map */
-    margin: 40px auto; /* Centers the app horizontally with padding */
-    height: auto; /* Fit precisely to the map size */
-    background: transparent; /* Changed from white so app seamlessly blends if needed */
+    max-width: 1200px;
+    /* Fixed maximum width constraint */
+    min-width: 1000px;
+    /* Prevent it from shrinking too much and breaking the map */
+    margin: 40px auto;
+    /* Centers the app horizontally with padding */
+    height: auto;
+    /* Fit precisely to the map size */
+    background: transparent;
+    /* Changed from white so app seamlessly blends if needed */
     position: relative;
 }
 
 .view {
     width: 100%;
-    display: none; /* Hide when not active */
+    display: none;
+    /* Hide when not active */
     animation: fadeIn 0.5s ease-out forwards;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #map-view.active {
@@ -52,7 +68,8 @@ body {
 
 .map-container {
     width: 100%;
-    padding: 0; /* Remove internal padding for edge-to-edge neatness if desired, or keep minimal */
+    padding: 0;
+    /* Remove internal padding for edge-to-edge neatness if desired, or keep minimal */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,17 +77,21 @@ body {
 
 .base-map {
     position: relative;
-    width: 100%; /* Fully fill the 1200px fixed width */
-    border-radius: 20px; /* Re-add styling here to wrap properly */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    width: 100%;
+    /* Fully fill the 1200px fixed width */
+    border-radius: 20px;
+    /* Re-add styling here to wrap properly */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     /* Removed overflow: hidden so buildings can naturally pop out of bounds if needed */
 }
 
 .map-bg {
     display: block;
     width: 100%;
-    height: auto; /* Let the image dictate the exact height naturally */
-    border-radius: 20px; /* Apply rounding directly to the image */
+    height: auto;
+    /* Let the image dictate the exact height naturally */
+    border-radius: 20px;
+    /* Apply rounding directly to the image */
     position: relative;
     z-index: 1;
 }
@@ -91,7 +112,7 @@ body {
     width: 100%;
     height: auto;
     /* We processed to transparent PNG, no mix-blend-mode required keeping it clean */
-    filter: drop-shadow(0 5px 8px rgba(0,0,0,0.1)); 
+    filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.1));
     transition: all 0.3s ease;
 }
 
@@ -107,7 +128,8 @@ body {
 }
 
 .label-tag {
-    margin-top: -15px; /* Pull into the image slightly depending on perspective */
+    margin-top: -15px;
+    /* Pull into the image slightly depending on perspective */
     padding: 6px 16px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
@@ -115,8 +137,9 @@ body {
     font-weight: bold;
     color: var(--text-dark);
     border: 2px solid white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    opacity: 1; /* Always visible to act as a landmark */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    /* Always visible to act as a landmark */
     transition: all 0.3s;
     z-index: 6;
     animation: float-marker 3s infinite ease-in-out;
@@ -124,16 +147,25 @@ body {
 
 /* Beautiful floating animation for landmarks */
 @keyframes float-marker {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
 }
 
 .building-entity:hover .label-tag {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
-    transform: translateY(-8px) scale(1.08); /* Pop up on hover */
-    animation: none; /* Stop floating when interacted */
+    transform: translateY(-8px) scale(1.08);
+    /* Pop up on hover */
+    animation: none;
+    /* Stop floating when interacted */
     box-shadow: 0 8px 16px rgba(255, 107, 107, 0.4);
 }
 
@@ -141,10 +173,12 @@ body {
 #content-view {
     background-color: white;
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    display: none; /* Crucial: hide by default */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    display: none;
+    /* Crucial: hide by default */
     flex-direction: column;
-    min-height: 800px; /* Give it some base height */
+    min-height: 800px;
+    /* Give it some base height */
 }
 
 .content-header {
@@ -152,7 +186,7 @@ body {
     padding: 20px 40px;
     display: flex;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -237,8 +271,15 @@ body {
 }
 
 @keyframes slideUpFade {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .intro-title {
@@ -310,7 +351,7 @@ body {
 
 .social-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .social-icon {
@@ -319,7 +360,8 @@ body {
     object-fit: contain;
     margin-bottom: 20px;
     transition: transform 0.3s ease;
-    border-radius: 12px; /* Slight rounding for some icons if needed */
+    border-radius: 12px;
+    /* Slight rounding for some icons if needed */
 }
 
 .social-card:hover .social-icon {
@@ -340,8 +382,423 @@ body {
 }
 
 /* Card specific top borders */
-.social-card.fb { border-top-color: #1877F2; }
-.social-card.threads { border-top-color: #000000; }
-.social-card.ig { border-top-color: #E1306C; }
-.social-card.website { border-top-color: #0984e3; }
-.social-card.job104 { border-top-color: #FF7A00; }
+.social-card.fb {
+    border-top-color: #1877F2;
+}
+
+.social-card.threads {
+    border-top-color: #000000;
+}
+
+.social-card.ig {
+    border-top-color: #E1306C;
+}
+
+.social-card.website {
+    border-top-color: #0984e3;
+}
+
+.social-card.job104 {
+    border-top-color: #FF7A00;
+}
+
+/* =========================================
+   響應式設計 (Responsive Web Design)
+   適應平板與手機螢幕
+========================================= */
+
+/* 平板尺寸 (Tablet) */
+@media (max-width: 1024px) {
+    #app {
+        min-width: 0; /* 解除 1000px 的限制 */
+        margin: 20px auto; /* 減少上下邊距 */
+        width: 95%; /* 留一點點邊界，不要完全貼死 */
+    }
+
+    .base-map, .map-bg {
+        border-radius: 12px; /* 稍微縮小圓角 */
+    }
+    
+    .label-tag {
+        font-size: 12px; /* 標籤字體稍微縮小 */
+        padding: 4px 10px;
+        margin-top: -10px;
+    }
+    
+    .intro-content {
+        padding: 40px 30px;
+        width: 90%;
+    }
+    
+    .intro-title {
+        font-size: 1.6rem;
+    }
+    
+    .intro-subtitle {
+        font-size: 1rem;
+    }
+    
+    .intro-conclusion {
+        font-size: 1.05rem;
+    }
+    
+    .intro-enter-btn {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+/* 手機尺寸 (Mobile) */
+@media (max-width: 768px) {
+    #app {
+        margin: 0 auto; /* 移除外邊距 */
+        width: 100%; /* 完全貼齊螢幕邊緣 */
+    }
+    
+    .base-map, .map-bg {
+        border-radius: 0; /* 手機上移除圓角 */
+    }
+
+    .label-tag {
+        font-size: 9px; /* 手機上進一步縮小標籤 */
+        padding: 2px 6px;
+        border-width: 1px;
+    }
+    
+    .content-header {
+        padding: 15px 20px;
+    }
+    
+    .content-body {
+        padding: 20px 15px;
+    }
+    
+    .intro-content {
+        padding: 30px 20px;
+        width: 85%;
+    }
+    
+    .intro-title {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr; /* 在手機上強制社群卡片單排顯示 */
+    }
+}
+
+/* =========================================
+   職缺測驗 (Quiz UI)
+========================================= */
+.quiz-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    overflow: hidden;
+    min-height: 550px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-welcome, .quiz-question-view, .quiz-result-view {
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-welcome {
+    text-align: center;
+    justify-content: center;
+}
+
+.quiz-welcome-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.quiz-start-btn {
+    width: 100%;
+    padding: 18px;
+    border-radius: 30px;
+    background: #0D2D5A;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 5px 15px rgba(13, 45, 90, 0.3);
+}
+
+.quiz-start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(13, 45, 90, 0.4);
+}
+
+.quiz-start-btn:active {
+    transform: translateY(0);
+}
+
+.quiz-progress-wrapper {
+    margin-bottom: 25px;
+}
+
+.quiz-progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #a4b0be;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.quiz-progress-bg {
+    height: 6px;
+    background: #f1f2f6;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.quiz-progress-fill {
+    height: 100%;
+    background: #0D2D5A;
+    border-radius: 10px;
+    transition: width 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.fact-box {
+    background: #EEF2F7;
+    border-left: 4px solid #0D2D5A;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.fact-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    background: white;
+    color: #0D2D5A;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 8px;
+}
+
+.fact-text {
+    font-size: 0.9rem;
+    color: #444;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.quiz-question-title {
+    font-size: 1.4rem;
+    color: #2d3436;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.quiz-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 20px;
+    background: white;
+    border: 2px solid #f1f2f6;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.quiz-option:hover {
+    border-color: #a4b0be;
+    background: #fcfcfc;
+    transform: translateX(5px);
+}
+
+.quiz-option:active {
+    background: #f1f2f6;
+    transform: translateX(2px);
+}
+
+.quiz-option-letter {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #b2bec3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #636e72;
+    margin-right: 15px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    transition: border-color 0.2s;
+}
+
+.quiz-option:hover .quiz-option-letter {
+    border-color: #636e72;
+}
+
+.quiz-option-text {
+    color: #2d3436;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Result View */
+.quiz-result-view {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.result-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.result-icon {
+    font-size: 3rem;
+    background: #f8f9fa;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.result-subtitle {
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.result-title {
+    font-size: 2.2rem;
+    color: #2d3436;
+    margin-bottom: 10px;
+}
+
+.result-bu-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #f1f2f6;
+    color: #636e72;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.result-desc-box {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.result-desc-box p {
+    color: #636e72;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.traits-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.trait-tag {
+    background: white;
+    border: 1px solid #dfe6e9;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: #636e72;
+    font-weight: bold;
+}
+
+.result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.quiz-retry-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    background: white;
+    color: #636e72;
+    border: 2px solid #dfe6e9;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quiz-retry-btn:hover {
+    background: #f8f9fa;
+    border-color: #b2bec3;
+}
+
+.result-footer {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-icons {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    color: #b2bec3;
+}
+
+@media (max-width: 768px) {
+    .quiz-welcome, .quiz-question-view, .quiz-result-view {
+        padding: 25px 20px;
+    }
+    .quiz-question-title {
+        font-size: 1.2rem;
+    }
+}

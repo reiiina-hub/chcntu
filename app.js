@@ -7,14 +7,147 @@ const mapData = {
                     <h2 style="color: #ff7675; margin-bottom: 10px;">女力領導</h2>
                     <p style="color: #636e72; line-height: 1.6;">在嘉新，我們相信多元共融的力量。這裡有著無數傑出的女性領導者，她們以堅韌、細膩與創新的思維，帶領團隊在各個事業體中不斷突破。閱讀她們的故事，看見溫柔而堅定的女力如何推動企業前進。</p>
                 </div>
-                <div class="placeholder-card" style="border-top: 5px solid #74b9ff;">
-                    <h2 style="color: #74b9ff; margin-bottom: 10px;">友善家庭職場</h2>
-                    <p style="color: #636e72; line-height: 1.6;">我們深知每位員工都是家庭的重要支柱。因此，我們提供彈性上下班制度、優於法規的生育假期，以及各式友善家庭的福利措施，致力於打造讓員工能兼顧工作成就與家庭幸福的友善環境。</p>
+                <div class="placeholder-card" style="border-top: 5px solid #74b9ff; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(116, 185, 255, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.05)';" onclick="navigateTo('story_care')">
+                    <h2 style="color: #74b9ff; margin-bottom: 10px;">全面員工支持與關懷</h2>
+                    <p style="color: #636e72; line-height: 1.6; font-weight: bold; margin-bottom: 10px;">360 度全方位福利</p>
+                    <p style="color: #636e72; line-height: 1.6;">從「日常彈性」、「身心健康」、「財富保障」到「生老病死」的全方位照顧。我們提供優於法規的假勤與各項補助，做為嘉人們最安心的後盾，打造工作與生活雙贏的幸福職場。</p>
+                    <div style="margin-top: 15px; font-weight: bold; color: #74b9ff; text-align: right;">探索完整福利 ▶</div>
                 </div>
                 <div class="placeholder-card" style="border-top: 5px solid #a29bfe;">
                     <h2 style="color: #a29bfe; margin-bottom: 10px;">嘉人計畫</h2>
                     <p style="color: #636e72; line-height: 1.6; font-weight: bold; margin-bottom: 10px;">實習生怎麼說</p>
                     <p style="color: #636e72; line-height: 1.6;">「嘉人計畫」是我們培育未來人才的搖籃。在這裡，實習生不只是旁觀者，而是實際參與專案的實作夥伴。聽聽歷屆實習生分享他們在嘉新的成長歷程、獲得的啟發，以及這段寶貴經歷如何影響他們的職涯發展。</p>
+                </div>
+                <div class="placeholder-card" style="border-top: 5px solid #fdcb6e; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(253, 203, 110, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.05)';" onclick="navigateTo('story_benefits')">
+                    <h2 style="color: #fdcb6e; margin-bottom: 10px;">生活由我定義</h2>
+                    <p style="color: #636e72; line-height: 1.6; font-weight: bold; margin-bottom: 10px;">彈性工作日常</p>
+                    <p style="color: #636e72; line-height: 1.6;">早鳥還是夜貓？別人補班我們在幹嘛？透過真實的嘉人視角，帶你偷看我們的貼心福利，了解嘉新如何實踐「工作與生活完美平衡」！</p>
+                    <div style="margin-top: 15px; font-weight: bold; color: #fdcb6e; text-align: right;">偷偷看嘉人動態 👀 ▶</div>
+                </div>
+            </div>
+        `
+    },
+    story_benefits: {
+        title: "生活由我定義 🛋️",
+        content: `
+            <div style="max-width: 600px; margin: 0 auto; padding-bottom: 40px; display: flex; flex-direction: column; gap: 25px;">
+                
+                <!-- Card 1 -->
+                <div style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f1f2f6;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #ffeaa7; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-right: 15px;">👩🏻‍💻</div>
+                        <div>
+                            <div style="font-weight: bold; color: #2d3436; font-size: 1.1rem;">嘉人 H 小姐</div>
+                            <div style="color: #b2bec3; font-size: 0.9rem;">2 小時前</div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h3 style="color: #fdcb6e; margin-bottom: 10px; font-size: 1.3rem;">✨ 彈性上下班 ╳ 每月 3 日遠距辦公日</h3>
+                        <p style="color: #636e72; line-height: 1.8; font-size: 1.1rem;">早鳥型還是夜貓型？<br>在嘉新你都可以做自己～<br><br>每天早起精神百倍，或偶爾睡晚一點點 😴<br>還有每月 3 次不用出門的遠距日，<br>上班模式自由選，工作生活完美平衡！</p>
+                    </div>
+                    <div style="color: #0984e3; font-weight: bold; font-size: 0.95rem;">
+                        #嘉新以人為本 #WorkLifeBalance
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f1f2f6;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #81ecec; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-right: 15px;">👨🏽‍💻</div>
+                        <div>
+                            <div style="font-weight: bold; color: #2d3436; font-size: 1.1rem;">嘉人 C 先生</div>
+                            <div style="color: #b2bec3; font-size: 0.9rem;">5 小時前</div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h3 style="color: #00cec9; margin-bottom: 10px; font-size: 1.3rem;">✨ 補班日免進辦公室 ╳ 重要節日前一天彈性下班</h3>
+                        <p style="color: #636e72; line-height: 1.8; font-size: 1.1rem;">別人補班心酸酸，嘉人躺平好舒坦～ 🏖️<br>補班日免進公司，好好生活快樂滿分！<br><br>節日前一天，下午自由下班去，<br>提前開啟放假模式，返鄉出遊不塞車 🚗</p>
+                    </div>
+                    <div style="color: #0984e3; font-weight: bold; font-size: 0.95rem;">
+                        #嘉新以人為本 #放假總是快一步
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f1f2f6;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: #a29bfe; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-right: 15px;">🙋🏻‍♂️</div>
+                        <div>
+                            <div style="font-weight: bold; color: #2d3436; font-size: 1.1rem;">嘉人 W 先生</div>
+                            <div style="color: #b2bec3; font-size: 0.9rem;">昨天</div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h3 style="color: #6c5ce7; margin-bottom: 10px; font-size: 1.3rem;">✨ 新人假 2 日 ╳ 生日假半日</h3>
+                        <p style="color: #636e72; line-height: 1.8; font-size: 1.1rem;">加入嘉新滿三個月，立馬解鎖 2 天假 🔓<br>恭喜你正式升級、擺脫新手慌張期！<br><br>生日還加碼半天幸福特權 🎂<br>努力工作的你，值得更多小確幸！</p>
+                    </div>
+                    <div style="color: #0984e3; font-weight: bold; font-size: 0.95rem;">
+                        #新人禮包解鎖 #生日好好放個假
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="navigateTo('story')" style="background: white; color: #fdcb6e; border: 2px solid #fdcb6e; padding: 10px 30px; border-radius: 30px; font-size: 1.1rem; cursor: pointer; font-weight: bold; transition: all 0.2s;">
+                        ← 返回嘉人視角
+                    </button>
+                </div>
+            </div>
+        `
+    },
+    story_care: {
+        title: "全面員工支持與關懷 🎁",
+        content: `
+            <div style="max-width: 800px; margin: 0 auto; padding-bottom: 40px;">
+                <p style="text-align: center; color: #636e72; font-size: 1.1rem; margin-bottom: 30px;">嘉新從四大維度出發，為員工編織全方位的支持網，做您最安心的後盾。</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <!-- Category 1 -->
+                    <div style="background: white; border-radius: 15px; border-left: 8px solid #fdcb6e; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <h3 style="color: #fdcb6e; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center;"><span style="font-size: 1.8rem; margin-right: 10px;">⚖️</span> 彈性自主｜工作與生活平衡</h3>
+                        <ul style="color: #636e72; line-height: 1.8; font-size: 1.05rem; padding-left: 20px; margin: 0;">
+                            <li><b>彈性出勤：</b> 上班 07:30-09:30／下班 16:30-18:30。</li>
+                            <li><b>遠距辦公：</b> 每月可申請 3 日。</li>
+                            <li><b>節慶小確幸：</b> 重要節日前半天提早下班。</li>
+                            <li><b>專屬假勤：</b> 新人假（通過試用期即享 2 日）、生日假（當月半日）、志工假（每年 6 天）。</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div style="background: white; border-radius: 15px; border-left: 8px solid #ff7675; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <h3 style="color: #ff7675; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center;"><span style="font-size: 1.8rem; margin-right: 10px;">🍼</span> 友善家庭｜迎接新生命與全齡照護</h3>
+                        <ul style="color: #636e72; line-height: 1.8; font-size: 1.05rem; padding-left: 20px; margin: 0;">
+                            <li><b>好孕與育兒：</b> 生育禮金 $10,000＋幸福禮包（價值 $5,000）；育兒補助每年每名最高 $6,000。</li>
+                            <li><b>優照護專案：</b> 幼兒與長輩「臨時照顧補助」，每年每名最高 $6,000。</li>
+                            <li><b>生養假期（優於法規）：</b> 產檢假 10 天、陪產檢及陪產假 10 天。</li>
+                            <li><b>子女教育：</b> 依福委會獎助學金辦法核給。</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div style="background: white; border-radius: 15px; border-left: 8px solid #00b894; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <h3 style="color: #00b894; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center;"><span style="font-size: 1.8rem; margin-right: 10px;">🏃🏻‍♀️</span> 身心健康｜活力與醫療照護</h3>
+                        <ul style="color: #636e72; line-height: 1.8; font-size: 1.05rem; padding-left: 20px; margin: 0;">
+                            <li><b>醫療防護：</b> 免費流感疫苗、健康檢查、心理健康講座、職場護理師駐點、24 小時 EAP 服務、CPR & AED 訓練。</li>
+                            <li><b>專屬健檢假：</b> 每年 1 天。</li>
+                            <li><b>運動與活力：</b> 員工專屬五星級健身房、各項運動社團（籃球、街舞、瑜珈等）。</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 4 -->
+                    <div style="background: white; border-radius: 15px; border-left: 8px solid #0984e3; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <h3 style="color: #0984e3; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center;"><span style="font-size: 1.8rem; margin-right: 10px;">🛡️</span> 安心後盾｜生活轉折與財富保障</h3>
+                        <ul style="color: #636e72; line-height: 1.8; font-size: 1.05rem; padding-left: 20px; margin: 0;">
+                            <li><b>全薪照顧假（優於法規）：</b> 無剩餘特休者，全薪病假／全薪家庭照顧假皆為一年上限 3 日。</li>
+                            <li><b>優於法規喪假：</b> 父母、配偶喪亡者可申請 10 天。</li>
+                            <li><b>員工持股信託計畫：</b> 參加者每月提撥固定薪資，<b>公司相對提撥 100% 獎勵金</b>，保障未來財富！</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button onclick="navigateTo('story')" style="background: white; color: #74b9ff; border: 2px solid #74b9ff; padding: 10px 30px; border-radius: 30px; font-size: 1.1rem; cursor: pointer; font-weight: bold; transition: all 0.2s;">
+                        ← 返回嘉人視角
+                    </button>
                 </div>
             </div>
         `
@@ -22,12 +155,8 @@ const mapData = {
     quiz: {
         title: "職缺測驗 🎯",
         content: `
-            <div class="placeholder-card" style="text-align: center; padding: 60px 20px;">
-                <h2 style="font-size: 2rem; margin-bottom: 20px;">不知道該往哪裡發展嗎？</h2>
-                <p style="margin-bottom: 40px; color: #636e72; font-size: 1.1rem;">透過 5 分鐘的小測驗，幫您找到最適合您的事業體與相關職缺！</p>
-                <button style="background: var(--primary-color); color: white; border: none; padding: 15px 40px; border-radius: 30px; font-size: 1.2rem; cursor: pointer; font-weight: bold; transition: opacity 0.2s; box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);">
-                    開始測驗 ▶
-                </button>
+            <div id="quiz-container" class="quiz-container">
+                <!-- Content will be injected by JS -->
             </div>
         `
     },
@@ -267,13 +396,13 @@ const mapData = {
 function navigateTo(viewId) {
     const mapView = document.getElementById('map-view');
     const contentView = document.getElementById('content-view');
-    
+
     if (viewId === 'map') {
         mapView.classList.add('active');
         mapView.classList.remove('hidden');
         contentView.classList.remove('active');
         contentView.classList.add('hidden');
-        
+
         if (typeof gtag === 'function') {
             gtag('event', 'return_to_map');
         }
@@ -288,13 +417,17 @@ function navigateTo(viewId) {
                 contentBody.innerHTML = data.content;
                 contentBody.style.opacity = 1;
                 contentBody.style.transition = 'opacity 0.3s ease';
+
+                if (viewId === 'quiz') {
+                    renderQuizWelcome();
+                }
             }, 150);
-            
+
             mapView.classList.remove('active');
             mapView.classList.add('hidden');
             contentView.classList.add('active');
             contentView.classList.remove('hidden');
-            
+
             if (typeof gtag === 'function') {
                 gtag('event', 'view_feature', {
                     'feature_name': viewId,
@@ -310,10 +443,153 @@ function closeIntro() {
     const introOverlay = document.getElementById('intro-overlay');
     if (introOverlay) {
         introOverlay.classList.add('hidden');
-        
+
         // Optional: Track that the user entered the map from the intro
         if (typeof gtag === 'function') {
             gtag('event', 'enter_map_from_intro');
         }
     }
+}
+
+// ==========================================
+// Quiz Logic (Native JS)
+// ==========================================
+let currentQuestionIndex = 0;
+let userScores = { A: 0, B: 0, C: 0, D: 0 };
+
+function renderQuizWelcome() {
+    currentQuestionIndex = 0;
+    userScores = { A: 0, B: 0, C: 0, D: 0 };
+    
+    const container = document.getElementById('quiz-container');
+    if (!container) return;
+    
+    container.innerHTML = `
+        <div class="quiz-welcome animate-fade-in">
+            <div class="quiz-welcome-icon">🎯</div>
+            <h2 style="font-size: 2rem; margin-bottom: 20px; color: #0D2D5A;">找到你在嘉新的位置</h2>
+            <p style="color: #636e72; line-height: 1.8; margin-bottom: 30px;">
+                探索你的職涯基因，看你的性格傾向與嘉新四大事業體中哪一個最契合。<br>
+                <span style="font-size: 0.9rem; color: #a4b0be; display: inline-block; margin-top: 10px;">約 15 秒完成，共 6 個問題</span>
+            </p>
+            <button onclick="startQuiz()" class="quiz-start-btn">開始測驗 ▶</button>
+            <div style="margin-top: 40px; font-size: 0.85rem; color: #b2bec3;">
+                「以70年水泥為基，守護從森林到人文的生命棲位」
+            </div>
+        </div>
+    `;
+}
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    userScores = { A: 0, B: 0, C: 0, D: 0 };
+    renderQuestion(currentQuestionIndex);
+}
+
+function renderQuestion(index) {
+    const container = document.getElementById('quiz-container');
+    if (!container) return;
+    
+    const q = quizQuestions[index];
+    const progressPercent = ((index + 1) / quizQuestions.length) * 100;
+    
+    let optionsHtml = '';
+    const letters = ['A', 'B', 'C', 'D'];
+    q.options.forEach((opt, i) => {
+        optionsHtml += `
+            <button onclick="handleAnswer('${opt.type}')" class="quiz-option">
+                <span class="quiz-option-letter">${letters[i]}</span>
+                <span class="quiz-option-text">${opt.text}</span>
+            </button>
+        `;
+    });
+
+    container.innerHTML = `
+        <div class="quiz-question-view animate-fade-in">
+            <div class="quiz-progress-wrapper">
+                <div class="quiz-progress-text">
+                    <span>測驗進度</span>
+                    <span>${index + 1} / ${quizQuestions.length}</span>
+                </div>
+                <div class="quiz-progress-bg">
+                    <div class="quiz-progress-fill" style="width: ${progressPercent}%;"></div>
+                </div>
+            </div>
+            
+            <div class="fact-box">
+                <span class="fact-badge">嘉新真實成績</span>
+                <p class="fact-text">「${q.fact}」</p>
+            </div>
+            
+            <h3 class="quiz-question-title">${q.question}</h3>
+            
+            <div class="quiz-options-list">
+                ${optionsHtml}
+            </div>
+        </div>
+    `;
+}
+
+function handleAnswer(type) {
+    userScores[type]++;
+    
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+        currentQuestionIndex++;
+        renderQuestion(currentQuestionIndex);
+    } else {
+        showResult();
+    }
+}
+
+function showResult() {
+    const container = document.getElementById('quiz-container');
+    if (!container) return;
+    
+    let maxScore = -1;
+    let winner = 'A';
+    for (let key in userScores) {
+        if (userScores[key] > maxScore) {
+            maxScore = userScores[key];
+            winner = key;
+        }
+    }
+    
+    const result = quizResults[winner];
+    
+    let traitsHtml = '';
+    result.traits.forEach(trait => {
+        traitsHtml += `<span class="trait-tag">#${trait}</span>`;
+    });
+
+    container.innerHTML = `
+        <div class="quiz-result-view animate-fade-in">
+            <div class="result-icon-wrapper">
+                <span class="result-icon">${result.icon}</span>
+            </div>
+            <div class="result-subtitle" style="color: ${result.color};">測驗分析結果</div>
+            <h2 class="result-title">${result.title}</h2>
+            <div class="result-bu-tag">匹配：${result.bu}</div>
+            
+            <div class="result-desc-box">
+                <p>${result.desc}</p>
+                <div class="traits-container">
+                    ${traitsHtml}
+                </div>
+            </div>
+            
+            <div class="result-actions">
+                <button onclick="window.open('https://www.104.com.tw/company/5gonzzc?jobsource=google', '_blank')" class="quiz-start-btn" style="background-color: ${result.color}; border-color: ${result.color}; box-shadow: 0 4px 15px ${result.color}40;">
+                    查看最新職缺
+                </button>
+                <button onclick="renderQuizWelcome()" class="quiz-retry-btn">
+                    ↻ 重新測驗
+                </button>
+            </div>
+            
+            <div class="result-footer">
+                <div class="footer-icons">🌱 🏢 ❤️</div>
+                <div class="footer-text">© 嘉新企業團 CHC Group. 永續、女力、以人為本</div>
+            </div>
+        </div>
+    `;
 }
