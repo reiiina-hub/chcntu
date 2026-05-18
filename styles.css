@@ -236,7 +236,7 @@ body {
 
 /* Intro Overlay Styles */
 .intro-overlay {
-    position: absolute;
+    position: fixed; /* 改為 fixed 確保涵蓋整個瀏覽器視窗 */
     top: 0;
     left: 0;
     width: 100%;
@@ -246,9 +246,10 @@ body {
     -webkit-backdrop-filter: blur(12px);
     z-index: 2000;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
+    /* 移除 align-items: center，改用 margin: auto 來避免內容過高時頂部被裁切 */
+    padding: 20px;
+    overflow-y: auto; /* 允許內容過高時上下滑動 */
+    border-radius: 0; /* fixed 滿版不需要圓角 */
     opacity: 1;
     transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
 }
@@ -264,6 +265,7 @@ body {
     border-radius: 24px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     max-width: 750px;
+    margin: auto; /* 搭配外層 flex，達成完美的垂直水平置中，且不裁切 */
     text-align: center;
     animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     border: 1px solid rgba(255, 255, 255, 0.8);
@@ -455,8 +457,27 @@ body {
         width: 100%; /* 完全貼齊螢幕邊緣 */
     }
     
-    .base-map, .map-bg {
+    #map-view.active {
+        display: flex;
+        align-items: center; /* 讓地圖在畫面中垂直置中 */
+        min-height: 100vh; /* 確保背景灰色區塊能被置中配置 */
+    }
+    
+    .map-container {
+        width: 100%;
+        overflow-x: auto; /* 允許地圖太寬時可以左右滑動 */
+        -webkit-overflow-scrolling: touch;
+        padding: 20px 0; /* 上下留一點呼吸空間 */
+    }
+    
+    .base-map {
+        min-width: 800px; /* 強制地圖至少有 800px 寬，確保建築物大到可以用手指點擊 */
+        margin: 0 auto;
         border-radius: 0; /* 手機上移除圓角 */
+    }
+
+    .map-bg {
+        border-radius: 0;
     }
 
     .label-tag {
